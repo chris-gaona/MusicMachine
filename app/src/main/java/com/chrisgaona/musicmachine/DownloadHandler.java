@@ -13,21 +13,6 @@ public class DownloadHandler extends Handler {
 
     @Override
     public void handleMessage(Message msg) {
-        downloadSong(msg.obj.toString());
-    }
-
-    private void downloadSong(String song) {
-        // return difference in milliseconds between current time and epoch
-        long endTime = System.currentTimeMillis() + 10 * 1000;
-
-        while (System.currentTimeMillis() < endTime) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        Log.d(TAG, song + " downloaded!");
+//        downloadSong(msg.obj.toString());
     }
 }
