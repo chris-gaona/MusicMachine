@@ -24,32 +24,10 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Toast.makeText(MainActivity.this, "Downloading", Toast.LENGTH_SHORT).show();
 
-                Runnable runnable = new Runnable() {
-                    @Override
-                    public void run() {
-                        downloadSong();
-                    }
-                };
-
-                Thread thread = new Thread(runnable);
+                Thread thread = new DownloadThread();
                 thread.setName("DownloadThread");
                 thread.start();
             }
         });
-    }
-
-    private void downloadSong() {
-        // return difference in milliseconds between current time and epoch
-        long endTime = System.currentTimeMillis() + 10 * 1000;
-
-        while (System.currentTimeMillis() < endTime) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        Log.d(TAG, "Song downloaded!");
     }
 }
