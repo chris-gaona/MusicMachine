@@ -27,6 +27,7 @@ public class DownloadService extends Service {
 
         }
         mHandler = thread.mHandler;
+        mHandler.setService(this);
     }
 
     @Override
@@ -34,6 +35,7 @@ public class DownloadService extends Service {
         String song = intent.getStringExtra(MainActivity.KEY_SONG);
         Message message = Message.obtain();
         message.obj = song;
+        message.arg1 = startId;
         mHandler.sendMessage(message);
         return Service.START_REDELIVER_INTENT;
     }
