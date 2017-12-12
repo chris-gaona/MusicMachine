@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
 //                    thread.mHandler.sendMessage(message);
 
                     // start service for each song
-                    Intent intent = new Intent(MainActivity.this, DownloadService.class);
+                    Intent intent = new Intent(MainActivity.this, DownloadIntentService.class);
                     intent.putExtra(KEY_SONG, song);
                     startService(intent);
                 }
