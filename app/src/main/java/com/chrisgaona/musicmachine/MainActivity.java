@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onServiceConnected(ComponentName componentName, IBinder binder) {
             mBound = true;
+            // creating a separate process
+            // messenger is a reference to a handler
+            // messenger can be tranformed to a Binder
             PlayerService.LocalBinder localBinder = (PlayerService.LocalBinder) binder;
             mPlayerService = localBinder.getService();
 
