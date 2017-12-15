@@ -16,7 +16,7 @@ import android.util.Log;
 public class PlayerService extends Service {
     private static final String TAG = PlayerService.class.getSimpleName();
     private MediaPlayer mMediaPlayer;
-    private Messenger mMessenger = new Messenger(new PlayerHandler(this));
+    public Messenger mMessenger = new Messenger(new PlayerHandler(this));
 //    private IBinder mBinder = new LocalBinder();
 
     @Override
